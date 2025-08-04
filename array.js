@@ -27,6 +27,16 @@ const finalValue = nums2.reduce((acc, curr, index, array) => {
 
 console.log(finalValue);
 
+const values = ["hello", 13, "how", 14, "are", "you"];
+// const obj = {"hello":0, 13:1, "how":2, 14:3, "are":4, "you":5};
+
+const obj = values.reduce((acc, curr, index, arr) => {
+  acc[curr] = index;
+  return acc;
+}, {});
+
+console.log(obj);
+
 // find() : Returns the first element that matches a condition.
 // returns undefined if not match found.
 
