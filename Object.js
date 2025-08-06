@@ -41,6 +41,7 @@ const person1 = { userName: "Alice", age: 45 };
 const { userName, age } = person1;
 console.log(userName, age);
 
+// Destructuring with different variable name
 const car = { brand: "Tesla", model: "Model 3" };
 const mobile = { brand: "Apple", model: "iPhone 16" };
 
@@ -48,3 +49,34 @@ const { brand: carBrand, model: carModel } = car;
 const { brand: mobileBrand, model: mobileModel } = mobile;
 
 console.log(carBrand);
+
+// Nested Destructuring
+const employee = {
+  id: 1,
+  name: "Charlie",
+  address: {
+    city: "Mumbai",
+    country: "India",
+  },
+};
+const {
+  name,
+  address: { city, country },
+} = employee;
+console.log(name, city, country);
+
+function printUser({ name, age }) {
+  console.log(`${name} is ${age} years old.`);
+}
+
+// function printUser(prop) {
+//   console.log(`${prop.name} is ${prop.age} years old.`);
+// }
+
+printUser({ name: "John", age: 34 });
+
+function myFun({ name, age, city }, secondProp) {
+  console.log(name, secondProp);
+}
+
+myFun({ name: "TJ", age: 34, city: "HYD" }, "hello world");
