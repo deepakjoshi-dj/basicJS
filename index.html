@@ -6,21 +6,43 @@
     <title>Dom Manipulation</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
+    <!-- <h1>Hello World!</h1>
     <div id="myDiv">I am Good</div>
     <p class="text">paragraph 1</p>
-    <p class="text">paragraph 2</p>
+    <p class="text">paragraph 2</p> -->
   </body>
   <script>
+    /* ------- Accessing Dom Elements ------ */
+
+    // const varDiv = document.getElementById("myDiv");
+    // const texts = document.getElementsByClassName("text");
+    // const firstParagraph = document.querySelector(".text");
+    // const allParagraphs = document.querySelectorAll(".text");
+    // const heading = document.getElementsByTagName("h1");
+    // console.log(varDiv.innerText);
+    // console.log(texts.length);
+    // console.log(firstParagraph.innerText);
+    // console.log(allParagraphs?.[1]?.innerText);
+    // console.log(heading[0].innerText);
+    /* ------- End ------ */
+
+    /* ------- Changing the content ------ */
     const varDiv = document.getElementById("myDiv");
-    const texts = document.getElementsByClassName("text");
+    varDiv.innerText = "Hello World!";
+    varDiv.innerHTML = "<b>Hello World!</b>";
+    // changing styles
+    varDiv.style.color = "red";
+    varDiv.style.backgroundColor = "yellow";
+    varDiv.style.padding = "10px";
+    /* ------- End ------ */
+
+    /* ------- Adding and Removing Elements ------ */
+    const newElement = document.createElement("h2"); // <h2> </h2>
+    newElement.innerText = "I am new here...";
+    // document.body.appendChild(newElement);
+    varDiv.appendChild(newElement);
+    // Removing Elements
     const firstParagraph = document.querySelector(".text");
-    const allParagraphs = document.querySelectorAll(".text");
-    const heading = document.getElementsByTagName("h1");
-    console.log(varDiv.innerText);
-    console.log(texts.length);
-    console.log(firstParagraph.innerText);
-    console.log(allParagraphs?.[1]?.innerText);
-    console.log(heading[0].innerText);
+    firstParagraph.remove();
   </script>
 </html>

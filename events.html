@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning Events.</title>
+  </head>
+  <body>
+    <!-- Inline Event Handling -->
+    <button onclick="alert('Button Clicked.')">Click Me</button>
+    <!-- End -->
+
+    <!-- DOM property method. -->
+    <button id="btn">Click Me DOM</button>
+    <!-- End -->
+
+    <!-- Add event listener. -->
+    <button id="btn-1">Click Me Event Listener</button>
+  </body>
+
+  <!-- DOM property method. -->
+  <script>
+    const btn = document.getElementById("btn");
+    btn.onclick = function () {
+      alert("Button Clicked with help of Dom property method.");
+    };
+    // it is going to overwrite the function
+    // btn.onclick = function () {
+    //   console.log("i am overwriting.");
+    // };
+  </script>
+
+  <!-- Add Event Listener -->
+  <script>
+    const btnEvent = document.getElementById("btn-1");
+    btnEvent.addEventListener("click", () => {
+      alert("Another Action from Event");
+    });
+    btnEvent.addEventListener("click", () => {
+      console.log("Another action from event.");
+    });
+  </script>
+</html>
